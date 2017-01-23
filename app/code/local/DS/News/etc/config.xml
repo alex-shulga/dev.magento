@@ -5,4 +5,13 @@
             <version>0.0.1</version>
         </DS_News>
     </modules>
+    <global>
+        <resources>
+            <dsnews_setup>
+                <setup>
+                    <module>DS_News</module>
+                </setup>
+            </dsnews_setup>
+        </resources>
+    </global>
 </config>
