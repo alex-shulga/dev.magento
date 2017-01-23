@@ -45,5 +45,10 @@
                 </setup>
             </dsnews_setup>
         </resources>
+        <blocks>
+            <dsnews>
+                <class>DS_News_Block</class>
+            </dsnews>
+        </blocks>
     </global>
 </config>
