@@ -28,6 +28,10 @@ class DS_News_Adminhtml_NewsController extends Mage_Adminhtml_Controller_Action
         Mage::register('current_news', $model);
 
         $this->loadLayout()->_setActiveMenu('dsnews');
+
+        $this->getLayout()->getBlock('head')->addItem('skin_js', 'ds_news/adminhtml/scripts.js');
+        $this->getLayout()->getBlock('head')->addItem('skin_css', 'ds_news/adminhtml/styles.css');
+
         $this->_addLeft($this->getLayout()->createBlock('dsnews/adminhtml_news_edit_tabs'));
         $this->_addContent($this->getLayout()->createBlock('dsnews/adminhtml_news_edit'));
         $this->renderLayout();
