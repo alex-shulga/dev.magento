@@ -50,5 +50,21 @@
                 <class>DS_News_Block</class>
             </dsnews>
         </blocks>
+        <helpers>
+            <dsnews>
+                <class>DS_News_Helper</class>
+            </dsnews>
+        </helpers>
     </global>
+    <admin>
+        <routers>
+            <dsnews_admin>
+                <use>admin</use>
+                <args>
+                    <module>DS_News</module>
+                    <frontName>dsnews_admin</frontName>
+                </args>
+            </dsnews_admin>
+        </routers>
+    </admin>
 </config>
