@@ -11,9 +11,7 @@ class DS_News_Block_Adminhtml_News_Edit_Tabs_General extends Mage_Adminhtml_Bloc
 
 
         $form = new Varien_Data_Form();
-        $fieldset = $form->addFieldset('general_form', array(
-            'legend' => $helper->__('General Information')
-        ));
+        $fieldset = $form->addFieldset('general_form', array('legend' => $helper->__('General Information')));
 
         $fieldset->addField('title', 'text', array(
             'label' => $helper->__('Title'),
@@ -27,6 +25,11 @@ class DS_News_Block_Adminhtml_News_Edit_Tabs_General extends Mage_Adminhtml_Bloc
             'name' => 'content',
         ));
 
+        $fieldset->addField('image', 'image', array(
+            'label' => $helper->__('Image'),
+            'name' => 'image',
+        ));
+
         $fieldset->addField('created', 'date', array(
             'format' => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
             'image' => $this->getSkinUrl('images/grid-cal.gif'),
@@ -34,7 +37,8 @@ class DS_News_Block_Adminhtml_News_Edit_Tabs_General extends Mage_Adminhtml_Bloc
             'name' => 'created'
         ));
 
-        $form->setValues($model->getData());
+        $formData = array_merge($model->getData(), array('image' => $model->getImageUrl()));
+        $form->setValues($formData);
         $this->setForm($form);
 
         return parent::_prepareForm();
